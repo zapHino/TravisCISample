@@ -1,0 +1,14 @@
+# 言語指定
+language: objective-c
+
+install:
+  # xcodebuildコマンドで出されるログをきれいにするツール
+  - gem install xcpretty
+  # リポジトリの Podfile.lock に書かれているのと同じバージョンの cocoapods をインストール
+  - gem install cocoapods -v '0.35.0'
+  
+script:
+  # ビルドディレクトリをクリーン
+  - rake clean
+  # テスト実行
+  - rake test
